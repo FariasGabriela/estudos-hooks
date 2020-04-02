@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Card from './../components/Card/Card';
 import Grid from '@material-ui/core/Grid';
+import useNameUser from '../hooks/useNameUser';
 
 function Home() {
+  const user = useNameUser(0);
+  console.log(user);
+  const user2 = useNameUser(1);
+  console.log(user2);
   const [count, setCount] = useState(0);
   const fruitVariable = useState('Banana');
 
@@ -21,6 +26,10 @@ function Home() {
       }}
     >
       <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <p>User: {user}</p>
+        </Grid>
+
         <Grid item xs={3}>
           <Card onClick={() => setCount(count + 1)} count={count + 'GB'} />
         </Grid>
