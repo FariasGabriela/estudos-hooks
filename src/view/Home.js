@@ -15,6 +15,23 @@ function Home() {
     document.title = `Você clicou ${count} vezes!`;
   });
 
+  const clickButton = () => {
+    setCount(count + 1);
+  };
+
+  const question = 'answer';
+
+  const item = {
+    [question]: 4,
+  };
+
+  console.log(item.answer);
+
+  const [first, ...restOfItems] = [10, 20, 30, 40];
+
+  console.log(first);
+  console.log(restOfItems);
+
   return (
     <div
       style={{
@@ -22,7 +39,7 @@ function Home() {
         height: 'calc(100% - 30px)',
         width: 'calc(100% - 30px)',
         position: 'absolute',
-        padding: 15
+        padding: 15,
       }}
     >
       <Grid container spacing={2}>
@@ -31,7 +48,7 @@ function Home() {
         </Grid>
 
         <Grid item xs={3}>
-          <Card onClick={() => setCount(count + 1)} count={count + 'GB'} />
+          <Card onClick={clickButton} count={count + 'GB'} />
         </Grid>
 
         <Grid item xs={3}>
@@ -39,11 +56,11 @@ function Home() {
         </Grid>
 
         <Grid item xs={3}>
-          <Card onClick={() => setCount(count + 1)} count={count} />
+          <Card onClick={clickButton} count={count} />
         </Grid>
 
         <Grid item xs={3}>
-          <Card onClick={() => setCount(count + 1)} count={count} />
+          <Card onClick={clickButton} count={count} />
         </Grid>
       </Grid>
     </div>
