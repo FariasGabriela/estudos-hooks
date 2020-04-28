@@ -13,7 +13,7 @@ function useNameUser(id) {
     }
 
     return handleChangeName(id);
-  });
+  }, []);
 
   return name;
 }

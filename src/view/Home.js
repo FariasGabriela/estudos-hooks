@@ -12,8 +12,9 @@ function Home() {
   const fruitVariable = useState('Banana');
 
   useEffect(() => {
+    console.log('use effect teste');
     document.title = `Você clicou ${count} vezes!`;
-  });
+  }, [count]);
 
   const clickButton = () => {
     setCount(count + 1);
@@ -67,4 +68,18 @@ function Home() {
   );
 }
 
-export default Home;
+class Teste extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    console.log('teste');
+  }
+
+  render() {
+    return <Home />;
+  }
+}
+
+export default Teste;
